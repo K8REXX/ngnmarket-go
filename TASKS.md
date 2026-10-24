@@ -7,7 +7,7 @@ the endpoints**, one at a time, in the same style.
 You do not need to be an expert. Every task is "copy the pattern, change the names". Start with the tasks marked
 **S**, and ask when you get stuck.
 
-## 1. Get set up (about 15 minutes).... DONE
+## 1. Get set up (about 15 minutes)....
 
 1. Install Go 1.22 or newer (`go version` to check).
 2. Clone the repo and run the tests. They should all pass before you change anything.
@@ -36,7 +36,7 @@ go run ./examples/ngx_market
 go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest
 ```
 
-## 2. Where things live.... UNDERSTOOD
+## 2. Where things live....
 
 ```
 api/api.go        the list of every call (the RemoteCalls interface). Add your method here.
@@ -48,7 +48,7 @@ api/*_test.go     tests.       examples/   small programs people can run.
 api/mock/         generated, never edit by hand. Run `go generate ./...` to refresh it.
 ```
 
-## 3. The recipe: add one endpoint.... UNDERSTOOD
+## 3. The recipe: add one endpoint....
 
 Do exactly this for every task. The finished example to copy is **`ListNGXSymbols`**
 (`GET /companies/identifiers`). Open these four places and see how it was done:
@@ -110,7 +110,7 @@ go generate ./...     # refreshes the mock
 Then add a row to the endpoint table in `README.md` and a line under `[Unreleased]` in `CHANGELOG.md`.
 Open **one pull request per endpoint** (or per small group), titled like the issue.
 
-## 4. Rules
+## 4. Rules....
 
 - **Never commit an API key.** Not in code, tests, examples or the README. Use `os.Getenv("NGNMARKET_API_KEY")`.
 - **Do not edit `api/util.go`, `api/mock/` or `model/errors.go`** unless a task says so.
